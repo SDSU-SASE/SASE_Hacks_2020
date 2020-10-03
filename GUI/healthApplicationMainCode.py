@@ -2,6 +2,9 @@ import sys
 import healthApplicationMainWindowGUI
 from healthApplicationMainWindowGUI import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
+import data as d
+import writtenToExcel as written
+
 
 class HealthApp(Ui_MainWindow):
     def __init__(self):
@@ -32,12 +35,11 @@ class HealthApp(Ui_MainWindow):
         email = self.emailInput.getText()
         # input variables into the excel sheet
         self.stackedWidget.setCurrentIndex(2)
-        
-   
-    
-    
+
     
 if __name__ == "__main__":
+    d.func()
+    written.create_excel()
     app = QtWidgets.QApplication(sys.argv)
     win = Ui_MainWindow()
     win.show()
