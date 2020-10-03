@@ -16,11 +16,13 @@ def create_excel():
     sheet1.write(0, 2, 'Middle Name')
     sheet1.write(0, 3, 'Email')
     sheet1.write(0, 4, 'Phone Number')
+    sheet1.write(0, 5, 'Self Diagnosis')
     wb.save('Patient Contact Information.xls')
 
 
 # Edits Said Excel File and then Increments the Row for the Next Function Call
-def edit_excel(last, first, middle, email, phone):
+def edit_excel(last, first, middle, email, phone, self):
+    global rowNumber
     w = open_workbook('Patient Contact Information.xls')
     w_copy = copy(w)
     w_copy.get_sheet(0).write(rowNumber, 0, last)
@@ -28,7 +30,8 @@ def edit_excel(last, first, middle, email, phone):
     w_copy.get_sheet(0).write(rowNumber, 2, middle)
     w_copy.get_sheet(0).write(rowNumber, 3, email)
     w_copy.get_sheet(0).write(rowNumber, 4, phone)
-    ++rowNumber
+    w_copy.get_sheet(0).write(rowNumber, 5, self)
+    rowNumber = rowNumber + 1
     w_copy.save('Patient Contact Information.xls')
 
 
@@ -50,5 +53,8 @@ email = input()
 print("Enter Phone")
 phone = input()
 
-edit_excel(lastName, firstName, middleName, email, phone)
+print ("Enter Self Diagnosis")
+self = input()
+
+edit_excel(lastName, firstName, middleName, email, phone, self)
 print("Done")
