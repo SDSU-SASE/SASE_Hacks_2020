@@ -1,6 +1,8 @@
 # SASE_Hacks_2020
 NPE's program for SASEHacks 2020
 
+Authors: Nathan, Roland, Cornell, and Dimitri
+
 HOW TO IMPORT xlwt & xlutils
 1) Search up Python and open File Location
 2) Right click on already highlighted file
