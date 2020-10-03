@@ -28,3 +28,25 @@ def edit_excel(last, first, middle, email, phone):
     w.get_sheet(0).write(rowNumber, 4, phone)
     ++rowNumber
     w.save('Patient Contact Information.xls')
+
+
+print("Creating Excel")
+create_excel()
+
+print("Enter First Name")
+firstName = input()
+
+print("Enter Last Name")
+lastName = input()
+
+print("Enter Middle Name")
+middleName = input()
+
+print("Enter Email")
+email = input()
+
+print("Enter Phone")
+phone = input()
+
+edit_excel(lastName, firstName, middleName, email, phone)
+print("Done")
