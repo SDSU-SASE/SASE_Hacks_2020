@@ -22,7 +22,7 @@ def create_excel():
 
 # Edits Said Excel File and then Increments the Row for the Next Function Call
 def edit_excel(last, first, middle, email, phone, self):
-    global rowNumber
+    global rowNumber # Declaring Global Variable Here so that it will use this one
     w = open_workbook('Patient Contact Information.xls')
     w_copy = copy(w)
     w_copy.get_sheet(0).write(rowNumber, 0, last)
